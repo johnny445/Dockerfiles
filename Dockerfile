@@ -1,8 +1,8 @@
 FROM nimmis/alpine-java:openjdk-8-jre
 
-RUN apk update 
+RUN yum update 
 
-RUN apk add memcached
+RUN yum add memcached
 
 ENV TOMCAT_VERSION 8.0.30
 ENV CATALINA_HOME /opt/tomcat
@@ -32,9 +32,9 @@ COPY bosuiteCA.pem /usr/local/share/ca-certificates
 RUN update-ca-certificates
 #EXPOSE 2001
 
-RUN apk add openssl --force
+RUN yum add openssl --force
 
-RUN apk add --update bash
+RUN yum add --update bash
 
 #RUN   apk add jq
 
